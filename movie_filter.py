@@ -253,6 +253,10 @@ def searcher(keywords, top_n=10):
     search_mat = count_vect.fit_transform(search_df['total_literal'])
     # 코사인유사도생성
     search_sim = cosine_similarity(search_mat, search_mat)
+    '''
+    test = [4, 1, 6, 19, 12, 39, 55, 13]
+    np.sort(test)[::-1] # np.sort(arr)[::-1]은 내리참순으로 정렬
+    '''
     # search_sim_sorted_ind: keyword값과 total_literal값이 유사한 영화의 인덱스 행렬, argosort()[;, ::-1]을 이용하면 유사도가 높은 순(내림 차순)으로 정리된 search_sim 객체의 비교 행 위치 인덱스 값을 추출.
     search_sim_sorted_ind = search_sim.argsort()[:, ::-1]
     

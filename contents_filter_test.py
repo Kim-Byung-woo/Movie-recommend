@@ -60,6 +60,11 @@ print(genre_sim.shape) # 모든영화와 비교 했으므로 shpae가 (4803, 480
 print(genre_sim[:2])
 
 # 정렬
+'''
+test = [4, 1, 6, 19, 12, 39, 55, 13]
+np.sort(test)[::-1] # np.sort(arr)[::-1]은 내리참순으로 정렬
+'''
+
 genre_sim_sorted_ind = genre_sim.argsort()[:, ::-1] #genre_sim_sorted_ind: 장르가 유사한 영화의 인덱스 행렬, argosort()[;, ::-1]을 이용하면 유사도가 높은 순(내림 차순)으로 정리된 genre_sim 객체의 비교 행 위치 인덱스 값을 추출.
 print(genre_sim_sorted_ind[:1])
 
